@@ -3,6 +3,8 @@ import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import AllPokemon from './pages/All-Pokemon/All-Pokemon';
+import { getAllPokemon } from './components/services/poke-api';
+
 
 function App() {
   return (
