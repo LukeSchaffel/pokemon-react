@@ -6,8 +6,9 @@ import { getAllPokemon } from '../../components/services/poke-api';
 const AllPokemon = () => {
   const [pokemon, setPokemon] = useState([])
 
+
   useEffect(()=> {
-    getAllPokemon()
+    getAllPokemon(12)
     .then(pokemonData => setPokemon(pokemonData.results))
   }, [])
 
@@ -18,7 +19,7 @@ const AllPokemon = () => {
       {pokemon.map(pokemon =>
         <h1>{pokemon.name}</h1>
         )}
-
+    
     </div>
   </> 
   );
