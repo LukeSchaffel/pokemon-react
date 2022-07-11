@@ -19,24 +19,30 @@ const AllPokemon = () => {
       .then(pokemonData => setPokemon(pokemonData.results))
   }
 
+  const getGenOne = async () => {
+    setLoading(true)
+    const gen1Pokemon = await getAllPokemonWithInfo(151, 0)
+    setPokemon(gen1Pokemon)
+    setLoading(false)
+  }
+
   useEffect(() => {
-    getAllPokemonWithInfo(151, 0)
-      .then((pokemonData) => {
-        setPokemon(pokemonData)
-        setLoading(false)
-      })
+    getGenOne()
   }, [])
 
   const getGenTwo = async () => {
-    const gen2Pokemon = await getAllPokemonWithInfo(151, 151)
+    setLoading(true)
+    const gen2Pokemon = await getAllPokemonWithInfo(100, 151)
     setPokemon(gen2Pokemon)
+    setLoading(false)
   }
 
 
   return (
     <main>
       <h1>All Pokemon {loading ? <Spinner animation="border"></Spinner> : null}</h1>
-      <button onClick={getGenTwo()}>gen 2</button>
+      <button onClick={()=>getGenOne()}>gen 1</button>
+      <button onClick={()=>getGenTwo()}>gen 2</button>
 
       <div className='cards-container'>
         {pokemon.map((pokemon, i) => {
