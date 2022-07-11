@@ -59,7 +59,7 @@ ul {
   width: 200px;
   color: black;
   height: 300px;
-  border: 3px solid gold;
+  border: 8px solid gold;
   border-radius: 2%;
   background-color: aquamarine;
 
@@ -76,10 +76,10 @@ ul {
 }
 
 .card-image {
-  object-fit: cover;
+
   height: 150px;
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   border: 0.25rem solid gold;
   border-radius: 2%;
   display: block;

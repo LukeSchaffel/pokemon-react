@@ -22,7 +22,7 @@ const AllPokemon = () => {
 
 
   useEffect(() => {
-    getAllPokemonWithInfo()
+    getAllPokemonWithInfo(300, 151)
     .then((pokemonData) => {
       setPokemon(pokemonData)
       setLoading(false)
@@ -36,7 +36,7 @@ const AllPokemon = () => {
       
       <div className='cards-container'>
         {pokemon.map((pokemon, i) => {
-          return <PokemonCard pokemon={pokemon} />
+          return <PokemonCard key={i} pokemon={pokemon} />
         })}
 
       </div>

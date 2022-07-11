@@ -12,8 +12,8 @@ export const getPokemonInfo = (formData) => {
     .then(res => res.json())
 }
 
-export const getAllPokemonWithInfo = async () => {
-  const res = await axios.get(`${baseUrl}/pokemon?limit=${151}`)
+export const getAllPokemonWithInfo = async (total, offset) => {
+  const res = await axios.get(`${baseUrl}/pokemon?limit=${total}&offset=${offset}/`)
   const pokemonData = res.data.results
   const promiseArray = []
 

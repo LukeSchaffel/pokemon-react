@@ -25,7 +25,7 @@ const SearchPage = (props) => {
 
   }
 
-  console.log(currentPokemon)
+
 
 
   return (
@@ -41,10 +41,11 @@ const SearchPage = (props) => {
           />
           <button type="submit">Search</button>
         </form>
+        {currentPokemon.name ?
+          <PokemonCard pokemon={currentPokemon} />
+          : <h2>Search by Name</h2>
+        }
 
-   
-          <PokemonCard pokemon={currentPokemon}/>
-    
       </section>
 
     </>
