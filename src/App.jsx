@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import './Spinner.css'
+
 import NavBar from './components/NavBar/NavBar';
 import AllPokemon from './pages/All-Pokemon/All-Pokemon';
 import { getAllPokemon } from './components/services/poke-api';
