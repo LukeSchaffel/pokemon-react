@@ -4,33 +4,33 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import AllPokemon from './pages/All-Pokemon/All-Pokemon';
 import { getAllPokemon } from './components/services/poke-api';
-import SearchBar from './components/SearchBar/SearchBar';
 import { getPokemonInfo } from './components/services/poke-api';
 import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
-  
+
 
 
   return (
-   <>
-    <NavBar />
-    <Routes>
-      <Route
-        path='/AllPokemon'
-        element={<AllPokemon/>}
-      />
-      <Route
-        path='/SearchPage'
-        element={<SearchPage/>}
-      
-      />
-    </Routes>
-    
+    <>
+      <NavBar />
+      <main>
+        <Routes>
+          <Route
+            path='/AllPokemon'
+            element={<AllPokemon />}
+          />
+          <Route
+            path='/SearchPage'
+            element={<SearchPage />}
 
- 
-   
-   </>
+          />
+        </Routes>
+
+      </main>
+
+
+    </>
   );
 }
 

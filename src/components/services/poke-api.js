@@ -1,7 +1,7 @@
 const baseUrl = "https://pokeapi.co/api/v2"
 
-export function getAllPokemon(num) {
-  return fetch(`${baseUrl}/pokemon?limit=${num}&offset=0/`)
+export function getAllPokemon(get, offset) {
+  return fetch(`${baseUrl}/pokemon?limit=${get}&offset=${offset}/`)
   .then(res => res.json())
 }
 

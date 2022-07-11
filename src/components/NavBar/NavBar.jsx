@@ -1,12 +1,14 @@
-import {Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
-  return ( 
+  return (
     <>
-      <NavLink end to = "/AllPokemon">Pokemon</NavLink>
-      <NavLink end to = "SearchPage">Search</NavLink>
+      <ul>
+        <NavLink end to="/AllPokemon">Pokemon</NavLink>
+        <NavLink end to="SearchPage">Search</NavLink>
+      </ul>
     </>
-   );
+  );
 }
- 
+
 export default NavBar;
