@@ -23,21 +23,24 @@ const AllPokemon = () => {
 
   useEffect(() => {
     getAllPokemonWithInfo()
-    .then(pokemonData => setPokemon(pokemonData))
+    .then((pokemonData) => {
+      setPokemon(pokemonData)
+      setLoading(false)
+    })
   }, [])
 
 
   return (
     <main>
-      <h1>All Pokemon</h1>
-      {loading ? <Spinner animation="border"><h1>Loading</h1></Spinner> : null}
+      <h1>All Pokemon {loading ? <Spinner animation="border"></Spinner> : null}</h1>
+      
       <div className='cards-container'>
         {pokemon.map((pokemon, i) => {
           return <PokemonCard pokemon={pokemon} />
         })}
 
       </div>
-      <button onClick={handleNextPgae}>Next Page</button>
+      
     </main>
   );
 }

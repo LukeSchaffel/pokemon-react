@@ -9,6 +9,7 @@ import AllPokemon from './pages/All-Pokemon/All-Pokemon';
 import { getAllPokemon } from './components/services/poke-api';
 import { getPokemonInfo } from './components/services/poke-api';
 import SearchPage from './pages/SearchPage/SearchPage';
+import PokemonDetails from './pages/PokemonDetails/PokemonDetail';
 
 function App() {
 
@@ -20,14 +21,14 @@ function App() {
       <main>
         <Routes>
           <Route
-            path='/AllPokemon'
+            path='/'
             element={<AllPokemon />}
           />
           <Route
-            path='/SearchPage'
+            path='/search'
             element={<SearchPage />}
-
           />
+         <Route path='/pokemon-details' element={<PokemonDetails/>}></Route> 
         </Routes>
 
       </main>

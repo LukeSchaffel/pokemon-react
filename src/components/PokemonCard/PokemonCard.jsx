@@ -6,6 +6,8 @@ const PokemonCard = ({ pokemon }) => {
     return <h1>Search by Name</h1>
   }
 
+  console.log(pokemon.types[0].type.name);
+
   return (
 
     <Card className="pokemon-card">
@@ -20,9 +22,13 @@ const PokemonCard = ({ pokemon }) => {
           <div className="type-div">
             <h5>Type: </h5>
             <ul>
-              {pokemon.types.map((type) => {
+              <li className="type-list">{pokemon.types[0].type.name}</li>
+              {pokemon.types.length > 1 ?
+                <li className="type-list">: {pokemon.types[1].type.name}</li> : null
+              }
+              {/* {pokemon.types.map((type) => {
                 return <li className="type-list">{type.type.name}</li>
-              })}
+              })} */}
             </ul>
           </div>
           {pokemon.moves[0].move.name}
