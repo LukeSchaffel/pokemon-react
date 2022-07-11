@@ -42,10 +42,9 @@ const SearchPage = (props) => {
           <button type="submit">Search</button>
         </form>
 
-        <div>
+   
           <PokemonCard pokemon={currentPokemon}/>
-
-        </div>
+    
       </section>
 
     </>

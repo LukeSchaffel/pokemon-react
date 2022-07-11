@@ -30,11 +30,16 @@
   color: #61dafb;
 }
 
-main {
+section {
   margin: 0 auto;
+  padding: 10px;
+}
+
+main {
   text-align: center;
   display: flex;
   flex-direction: column;
+  
 }
 ul {
   list-style-type: none;
@@ -42,20 +47,63 @@ ul {
   padding: 0;
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
 .pokemon-card {
-  margin: 0 auto;
+  margin-top: 20px;
   width: 200px;
   color: black;
   height: 300px;
-  border: 1px solid black;
+  border: 3px solid gold;
+  border-radius: 2%;
+  background-color: aquamarine;
+
 
 }
-.pokemon-card header {
+.card-header {
   display: flex;
-  justify-content: space-around;
+  padding-left: 5px;
+  justify-content: left;
   height: 30px;
+  text-transform: capitalize;
+
   
 }
+
+.card-image {
+  object-fit: cover;
+  height: 150px;
+  margin: 0 auto;
+  width: 90%;
+  border: 0.25rem solid gold;
+  border-radius: 2%;
+  display: block;
+  background-color: white;
+}
+
+.card-text {
+  margin-left: 10px;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.type-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.type-list {
+  margin: 3px, auto;
+  display: inline;
+}
+
+
 
 @keyframes App-logo-spin {
   from {
