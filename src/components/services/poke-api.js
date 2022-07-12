@@ -26,7 +26,6 @@ export const getAllPokemonWithInfo = async (total, offset) => {
 
   }
   const allPokemonData = await Promise.all(promiseArray)
-
   const pokemon = []
   allPokemonData.forEach((item) => {
     pokemon.push(item.data)
