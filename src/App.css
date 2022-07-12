@@ -162,4 +162,10 @@ ul {
   justify-content: left;
 
 }
+.locations-div header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+}
 

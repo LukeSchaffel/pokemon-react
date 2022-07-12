@@ -25,7 +25,7 @@ const EncounterLocations = ({ pokemon }) => {
 
 
   return (
-    <article>
+    <article className="locations-div">
       <header>
         <h4>
           {locations.length < 1 ?
@@ -33,8 +33,13 @@ const EncounterLocations = ({ pokemon }) => {
             "Locations:"
           }
         </h4>
+        {locations.length > 5 ?
+          <button className="gen-btn">
+            Show {locations.length - firstFive.length} More
+          </button> : null 
+          }
         <div>
-
+          
           {smallList ?
             <ul>
               {firstFive.map((location, i) => {
