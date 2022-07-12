@@ -37,7 +37,12 @@ export const getLocationInfo = async (url) => {
   const res = await axios.get(url)
   const locationData = res.data
   return locationData
-
-
 }
 
+export const getMoveInfo = async (url) => {
+  const res = await axios.get(url)
+  const moveData = res.data
+  console.log(moveData);
+}
+
+getMoveInfo('https://pokeapi.co/api/v2/move/13/')

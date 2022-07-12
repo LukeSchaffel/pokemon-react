@@ -44,7 +44,7 @@ main {
   width: 500px;
   border: 8px solid gold;
   border-radius: 2%;
-  background-color: aquamarine;
+  background-color: rgb(74, 105, 156);
   padding: 10px;
 }
 
@@ -55,7 +55,7 @@ main {
   text-transform: capitalize;
   margin: 0 .8rem;
   padding: .5rem;
-  background-color: whitesmoke;
+  background-color: rgba(247,247,247);
 }
 
 ul {

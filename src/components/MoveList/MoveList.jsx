@@ -5,7 +5,7 @@ const MoveList = ({ pokemon }) => {
   const [firstFive, setFirstFive] = useState([...moveList.slice(0, 5)])
   const [smallList, setSmallList] = useState(true)
 
- 
+ console.log(moveList[0]);
   return (
     <div className="move-div">
       <article className="move-list">

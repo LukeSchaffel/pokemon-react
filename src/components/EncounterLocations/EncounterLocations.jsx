@@ -28,7 +28,7 @@ const EncounterLocations = ({ pokemon }) => {
     <div className="locations-div">
       <article className="locations-list">
         <header>
-          {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}
+          
           <h3>
             {locations.length < 1 ?
               "Not Found in the Wild" :
@@ -42,6 +42,7 @@ const EncounterLocations = ({ pokemon }) => {
               Show {locations.length - firstFive.length} More
             </button> : null
           }
+          {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}
         </header>
         <div>
 

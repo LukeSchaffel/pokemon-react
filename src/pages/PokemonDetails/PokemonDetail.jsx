@@ -7,7 +7,7 @@ import EncounterLocations from "../../components/EncounterLocations/EncounterLoc
 const PokemonDetails = () => {
   const location = useLocation()
   const [pokemon, setPokemon] = useState(location.state.singlePokemon)
-  
+
 
   return (
     <article className="info-div">
@@ -15,10 +15,10 @@ const PokemonDetails = () => {
         <h1>{pokemon.name}</h1>
         <h1># {pokemon.id}</h1>
       </header>
-      
-      <PhotoGalery pokemon={pokemon}/>
+
+      <PhotoGalery pokemon={pokemon} />
       <MoveList pokemon={pokemon} />
-      <EncounterLocations pokemon={pokemon}/>
+      <EncounterLocations pokemon={pokemon} />
     </article>
   );
 }
