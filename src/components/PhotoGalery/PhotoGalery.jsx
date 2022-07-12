@@ -2,7 +2,7 @@ import { Carousel, CarouselItem } from "react-bootstrap";
 
 const PhotoGalery = ({ pokemon }) => {
   const sprites = pokemon.sprites
-  const images = []
+  const images = [pokemon.sprites.front_default]
   const iterate = (sprites) => {
     Object.keys(sprites).forEach(key => {
       

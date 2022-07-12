@@ -4,15 +4,14 @@ const PokemonCard = ({ pokemon }) => {
 
   return (
 
-    <Card className="pokemon-card">
+    <article className="pokemon-card">
+      <div>
+        <header className="card-header">
+          <h5>{pokemon.name}</h5> <h5>{pokemon.id}</h5>
+        </header>
 
-      <Card.Body>
-        <Card.Title className="card-header">
-          {pokemon.name}{pokemon.id}
-        </Card.Title>
-
-        <Card.Img className="card-image" src={pokemon.sprites.front_default}></Card.Img>
-        <Card.Text className="card-text">
+        <img className="card-image" src={pokemon.sprites.front_default} alt={pokemon.sprites.front_default}></img>
+        <div className="card-text">
           <div className="type-div">
             <h5>Type: </h5>
             <ul>
@@ -23,9 +22,9 @@ const PokemonCard = ({ pokemon }) => {
             </ul>
           </div>
           {pokemon.moves[0].move.name}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        </div>
+      </div>
+    </article>
 
 
   );

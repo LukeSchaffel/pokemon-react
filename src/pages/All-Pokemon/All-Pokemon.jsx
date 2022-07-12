@@ -20,23 +20,17 @@ const AllPokemon = () => {
       .then(pokemonData => setPokemon(pokemonData.results))
   }
 
-  const getGenOne = async () => {
+  const getAndDisplayPokemon = async (get, pad) => {
     setLoading(true)
-    const gen1Pokemon = await getAllPokemonWithInfo(151, 0)
-    setPokemon(gen1Pokemon)
+    const newPokemon = await getAllPokemonWithInfo(get, pad)
+    setPokemon(newPokemon)
     setLoading(false)
   }
+
 
   useEffect(() => {
-    getGenOne()
+    getAndDisplayPokemon(151, 0)
   }, [])
-
-  const getGenTwo = async () => {
-    setLoading(true)
-    const gen2Pokemon = await getAllPokemonWithInfo(100, 151)
-    setPokemon(gen2Pokemon)
-    setLoading(false)
-  }
 
   const toPokemonDetails = (singlePokemon) => {
     navigate(`/pokemon-details`, { state: { singlePokemon } })
@@ -46,11 +40,17 @@ const AllPokemon = () => {
   return (
     <main>
       <h1>All Pokemon {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}</h1>
-      <button onClick={() => getGenOne()}>gen 1</button>
-      <button onClick={() => getGenTwo()}>gen 2</button>
+
+      <div className="btn-container">
+        <button onClick={() => getAndDisplayPokemon(151, 0)} className='gen-btn'>gen 1</button>
+        <button onClick={() => getAndDisplayPokemon(100, 151)} className='gen-btn'>gen 2</button>
+        <button onClick={() => getAndDisplayPokemon(134, 251)} className='gen-btn'>gen 3</button>
+      </div>
+
+
       <div className='cards-container'>
         {pokemon.map((pokemon, i) => {
-          return <button onClick={() => { toPokemonDetails(pokemon) }}> <PokemonCard key={i} pokemon={pokemon} /></button>
+          return <button onClick={() => { toPokemonDetails(pokemon) }} className='card-button'> <PokemonCard key={i} pokemon={pokemon} /></button>
         })}
       </div>
     </main>
