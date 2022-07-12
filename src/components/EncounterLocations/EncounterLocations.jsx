@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { getLocationInfo } from "../services/poke-api";
+import { Spinner } from "react-bootstrap";
 
 
 const EncounterLocations = ({ pokemon }) => {
@@ -8,6 +9,7 @@ const EncounterLocations = ({ pokemon }) => {
   const [locations, setLocations] = useState([])
   const [smallList, setSmallList] = useState(true)
   const [firstFive, setFirstFive] = useState([])
+  const [loading, setLoading] = useState(true)
 
 
 
@@ -17,10 +19,8 @@ const EncounterLocations = ({ pokemon }) => {
         setLocations(newLocations)
         setFirstFive(newLocations.slice(0, 5))
       })
-
+      setLoading(false)
   }, [])
-
-
 
 
 
@@ -28,6 +28,7 @@ const EncounterLocations = ({ pokemon }) => {
     <div className="locations-div">
       <article className="locations-list">
         <header>
+          {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}
           <h3>
             {locations.length < 1 ?
               "Not Found in the Wild" :
