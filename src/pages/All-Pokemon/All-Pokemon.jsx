@@ -39,18 +39,18 @@ const AllPokemon = () => {
   }
 
   const toPokemonDetails = (singlePokemon) => {
-    navigate(`/pokemon-details`, {state:{singlePokemon}})
+    navigate(`/pokemon-details`, { state: { singlePokemon } })
   }
 
 
   return (
     <main>
       <h1>All Pokemon {loading ? <Spinner animation="border"></Spinner> : null}</h1>
-      <button onClick={()=>getGenOne()}>gen 1</button>
-      <button onClick={()=>getGenTwo()}>gen 2</button>
+      <button onClick={() => getGenOne()}>gen 1</button>
+      <button onClick={() => getGenTwo()}>gen 2</button>
       <div className='cards-container'>
         {pokemon.map((pokemon, i) => {
-          return <button onClick={()=>{toPokemonDetails(pokemon)}}> <PokemonCard key={i} pokemon={pokemon} /></button>
+          return <button onClick={() => { toPokemonDetails(pokemon) }}> <PokemonCard key={i} pokemon={pokemon} /></button>
         })}
       </div>
     </main>
