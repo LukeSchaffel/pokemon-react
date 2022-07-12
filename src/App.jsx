@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <NavBar classname='nav'/>
       <main>
         <Routes>
           <Route

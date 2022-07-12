@@ -44,7 +44,7 @@ const AllPokemon = () => {
       <div className="btn-container">
         <button onClick={() => getAndDisplayPokemon(151, 0)} className='gen-btn'>gen 1</button>
         <button onClick={() => getAndDisplayPokemon(100, 151)} className='gen-btn'>gen 2</button>
-        <button onClick={() => getAndDisplayPokemon(134, 251)} className='gen-btn'>gen 3</button>
+        <button onClick={() => getAndDisplayPokemon(135, 251)} className='gen-btn'>gen 3</button>
       </div>
 
 

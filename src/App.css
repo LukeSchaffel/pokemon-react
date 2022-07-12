@@ -13,9 +13,9 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
+  background-color: #d52710;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,4 +126,25 @@ ul {
   margin-right: 3px;
   display: inline;
   text-transform: capitalize;
+}
+
+.move-div {
+  justify-content: center;
+}
+
+.move-list {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.move-list li {
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.move-list header{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
 }
