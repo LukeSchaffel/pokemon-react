@@ -2,10 +2,10 @@ import axios from "axios"
 
 const baseUrl = "https://pokeapi.co/api/v2"
 
-export function getAllPokemon(get, offset) {
-  return fetch(`${baseUrl}/pokemon?limit=${get}&offset=${offset}/`)
-    .then(res => res.json())
-}
+// export function getAllPokemon(get, offset) {
+//   return fetch(`${baseUrl}/pokemon?limit=${get}&offset=${offset}/`)
+//     .then(res => res.json())
+// }
 
 export const getPokemonInfo = (formData) => {
   return fetch(`https://pokeapi.co/api/v2/pokemon/${formData}`)
@@ -33,4 +33,11 @@ export const getAllPokemonWithInfo = async (total, offset) => {
   return pokemon
 }
 
-getAllPokemonWithInfo()
+export const getLocationInfo = async (url) => {
+  const res = await axios.get(url)
+  const locationData = res.data
+  return locationData
+
+
+}
+

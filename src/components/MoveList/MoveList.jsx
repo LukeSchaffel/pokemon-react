@@ -5,14 +5,14 @@ const MoveList = ({ pokemon }) => {
   const [firstFive, setFirstFive] = useState([...moveList.slice(0, 5)])
   const [smallList, setSmallList] = useState(true)
 
-
+ 
   return (
     <div className="move-div">
       <article className="move-list">
         <header>
           <h3>Move List</h3>
           <button className="gen-btn" onClick={() => { setSmallList(!smallList) }}>
-            {smallList ? "Show More" : "Show Less"}
+            {smallList ? `Show ${moveList.length - firstFive.length} More` : "Show Less"}
           </button>
         </header>
         <div>

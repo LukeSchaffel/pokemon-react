@@ -34,16 +34,32 @@ section {
 }
 
 main {
-  text-align: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 
+}
+
+.info-div{
+  margin-top: 2rem;
+  width: 500px;
+  border: 8px solid gold;
+  border-radius: 2%;
+  background-color: aquamarine;
+  padding: 10px;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.all-pokemon-div {
+  max-width: 80%;
+}
+
+.all-pokemon-div header{
+  text-align: center;
 }
 
 .cards-container {
@@ -74,6 +90,7 @@ ul {
 
 .carousel-image {
   height: 300px;
+  width: 100%;
 }
 
 .card-button {
@@ -132,10 +149,7 @@ ul {
   justify-content: center;
 }
 
-.move-list {
-  width: 30%;
-  margin: 0 auto;
-}
+
 
 .move-list li {
   text-align: left;
@@ -148,3 +162,4 @@ ul {
   justify-content: left;
 
 }
+
