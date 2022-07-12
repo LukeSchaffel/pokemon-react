@@ -10,12 +10,16 @@ const PokemonDetails = () => {
   
 
   return (
-    <div className="info-div">
-      <h1>{pokemon.name}</h1>
+    <article className="info-div">
+      <header>
+        <h1>{pokemon.name}</h1>
+        <h1># {pokemon.id}</h1>
+      </header>
+      
       <PhotoGalery pokemon={pokemon}/>
       <MoveList pokemon={pokemon} />
       <EncounterLocations pokemon={pokemon}/>
-    </div>
+    </article>
   );
 }
 

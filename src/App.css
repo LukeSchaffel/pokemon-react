@@ -48,6 +48,13 @@ main {
   padding: 10px;
 }
 
+.info-div header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -151,21 +158,16 @@ ul {
 
 
 
-.move-list li {
+.move-list li, .locations-list li {
   text-align: left;
   text-transform: capitalize;
 }
 
-.move-list header{
+.move-list header, .locations-list header {
   display: flex;
   flex-direction: row;
   justify-content: left;
 
 }
-.locations-div header {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
 
-}
 

@@ -25,21 +25,25 @@ const EncounterLocations = ({ pokemon }) => {
 
 
   return (
-    <article className="locations-div">
-      <header>
-        <h4>
-          {locations.length < 1 ?
-            "Not Found in the Wild" :
-            "Locations:"
+    <div className="locations-div">
+      <article className="locations-list">
+        <header>
+          <h3>
+            {locations.length < 1 ?
+              "Not Found in the Wild" :
+              "Locations:"
+            }
+          </h3>
+          {locations.length > 5 ?
+            <button 
+            onClick={()=>{setSmallList(!smallList)}}
+            className="gen-btn">
+              Show {locations.length - firstFive.length} More
+            </button> : null
           }
-        </h4>
-        {locations.length > 5 ?
-          <button className="gen-btn">
-            Show {locations.length - firstFive.length} More
-          </button> : null 
-          }
+        </header>
         <div>
-          
+
           {smallList ?
             <ul>
               {firstFive.map((location, i) => {
@@ -56,9 +60,9 @@ const EncounterLocations = ({ pokemon }) => {
 
           }
         </div>
-      </header>
 
-    </article>
+      </article>
+    </div>
   );
 }
 
