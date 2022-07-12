@@ -5,10 +5,10 @@ const PhotoGalery = ({ pokemon }) => {
   const images = [pokemon.sprites.front_default]
   const iterate = (sprites) => {
     Object.keys(sprites).forEach(key => {
-      
+
       if (typeof sprites[key] !== 'object' && sprites[key] !== null) {
         images.push(sprites[key]);
-        
+
       }
 
       if (typeof sprites[key] === 'object' && sprites[key] !== null) {
@@ -18,28 +18,19 @@ const PhotoGalery = ({ pokemon }) => {
   }
   iterate(sprites)
 
-return (
-  <>
-    <section>
-      <Carousel variant='dark'>
-        {images.map((image,i) => (
-          <CarouselItem key={i}>
-          <img className="carousel-image" src={image} alt={image} />
-        </CarouselItem>
-
-
-        ))
-
-
-
-        }
-        
-
-      </Carousel>
-
-    </section>
-  </>
-);
+  return (
+    <>
+      <section>
+        <Carousel variant='dark'>
+          {images.map((image, i) => (
+            <CarouselItem key={i}>
+              <img className="carousel-image" src={image} alt={image} />
+            </CarouselItem>
+          ))}
+        </Carousel>
+      </section>
+    </>
+  );
 }
 
 export default PhotoGalery;

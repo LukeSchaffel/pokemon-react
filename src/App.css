@@ -53,6 +53,9 @@ main {
   flex-direction: row;
   justify-content: space-between;
   text-transform: capitalize;
+  margin: 0 .8rem;
+  padding: .5rem;
+  background-color: whitesmoke;
 }
 
 ul {
@@ -98,6 +101,9 @@ ul {
 .carousel-image {
   height: 300px;
   width: 100%;
+  border: .8rem solid gold;
+  border-radius: 3%;
+  background-color: whitesmoke;
 }
 
 .card-button {
@@ -152,8 +158,12 @@ ul {
   text-transform: capitalize;
 }
 
-.move-div {
+.move-div, .locations-list {
   justify-content: center;
+  margin: 0 1rem;
+  padding: .5rem;
+  background-color: whitesmoke;
+
 }
 
 
