@@ -45,7 +45,7 @@ const AllPokemon = () => {
 
   return (
     <main>
-      <h1>All Pokemon {loading ? <Spinner animation="border"></Spinner> : null}</h1>
+      <h1>All Pokemon {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}</h1>
       <button onClick={() => getGenOne()}>gen 1</button>
       <button onClick={() => getGenTwo()}>gen 2</button>
       <div className='cards-container'>
