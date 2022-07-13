@@ -21,11 +21,11 @@ const MoveDetails = () => {
     for (let i = 0; i < arrayOfPokemon.length; i++) {
       const poke = arrayOfPokemon[i];
       promiseArray.push(axios.get(poke.url))
-      const resolvedPromises = await Promise.all(promiseArray)
-      resolvedPromises.forEach((promise)=> {
-        arrayOfCompletedPromises.push(promise.data)
-      })
     }
+    const resolvedPromises = await Promise.all(promiseArray)
+    resolvedPromises.forEach((promise) => {
+      arrayOfCompletedPromises.push(promise.data)
+    })
     setPokemonList(arrayOfCompletedPromises)
     setLoading(false)
   }
@@ -49,24 +49,24 @@ const MoveDetails = () => {
         </header>
         <div>
           Learned By:
-          <ul>
-          {pokemonList.map((pokemon, i) => {
-            const { name, url } = pokemon
-            return (
-            <li>
-              <Link 
-              to='/pokemon-details'
-              state={{
-                singlePokemon: pokemon
-              }}
-              >
-                {name}
-              </Link>
-            </li>
-            )
-          })
+          <ul style={{ color: 'white', backgroundColor: 'white' }}>
+            {pokemonList.map((pokemon, i) => {
+              const { name, url } = pokemon
+              return (
+                <li style={{ color: 'white' }}>
+                  <Link
+                    to='/pokemon-details'
+                    state={{
+                      singlePokemon: pokemon
+                    }}
+                  >
+                    {name}
+                  </Link>
+                </li>
+              )
+            })
 
-          }
+            }
           </ul>
         </div>
 
