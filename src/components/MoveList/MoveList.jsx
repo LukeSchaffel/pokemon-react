@@ -1,11 +1,16 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
 const MoveList = ({ pokemon }) => {
   const [moveList, setMoveList] = useState([...pokemon.moves])
   const [firstFive, setFirstFive] = useState([...moveList.slice(0, 5)])
   const [smallList, setSmallList] = useState(true)
+  const navigate = useNavigate()
 
- console.log(moveList[0]);
+  const toMoveDetails = (singleMove) => {
+    navigate(`/move-details`, { state: { singleMove } })
+  }
+
   return (
     <div className="move-div">
       <article className="move-list">
@@ -19,12 +24,27 @@ const MoveList = ({ pokemon }) => {
           {smallList ?
             <ul>
               {firstFive.map((move, i) => {
-                return <li key={i}>{move.move.name}</li>
+                return <Link
+                  to={`/move-details`}
+                  state={{
+                    move: move
+                  }}
+                  key={i}
+                ><li >{move.move.name}</li></Link>
               })}
             </ul> :
             <ul>
               {moveList.map((move, i) => {
-                return <li key={i}>{move.move.name}</li>
+                return <Link
+                  to={`/move-details`}
+                  state={{
+                    move: move
+                  }}
+                  key={i}
+                ><li >
+                    {move.move.name}
+                  </li>
+                </Link>
               })}
             </ul>
           }

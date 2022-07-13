@@ -15,7 +15,6 @@ const PokemonDetails = () => {
         <h1>{pokemon.name}</h1>
         <h1># {pokemon.id}</h1>
       </header>
-
       <PhotoGalery pokemon={pokemon} />
       <MoveList pokemon={pokemon} />
       <EncounterLocations pokemon={pokemon} />
