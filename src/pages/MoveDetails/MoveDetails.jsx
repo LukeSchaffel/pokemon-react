@@ -11,6 +11,8 @@ const MoveDetails = () => {
   const [move, setMove] = useState({})
   const [loading, setLoading] = useState(true)
   const [pokemonList, setPokemonList] = useState([])
+  const [firstFive, setFirstFive] = useState([])
+  const [smallList, setSmallList] = useState(true)
 
   const getAndSetMoveInfo = async (URL) => {
     const newMoveInfo = await getMoveInfo(URL)
@@ -27,6 +29,7 @@ const MoveDetails = () => {
       arrayOfCompletedPromises.push(promise.data)
     })
     setPokemonList(arrayOfCompletedPromises)
+    setFirstFive(arrayOfCompletedPromises.slice(0, 5))
     setLoading(false)
   }
 
@@ -49,25 +52,51 @@ const MoveDetails = () => {
         </header>
         <div>
           Learned By:
-          <ul style={{ color: 'white', backgroundColor: 'white' }}>
-            {pokemonList.map((pokemon, i) => {
-              const { name, url } = pokemon
-              return (
-                <li style={{ color: 'white' }}>
-                  <Link
-                    to='/pokemon-details'
-                    state={{
-                      singlePokemon: pokemon
-                    }}
-                  >
-                    {name}
-                  </Link>
-                </li>
-              )
-            })
+          <button className="gen-btn" onClick={() => { setSmallList(!smallList) }}>
+            {smallList ? `Show ${pokemonList.length - firstFive.length} More` : "Show Less"}
+          </button>
 
-            }
-          </ul>
+          {smallList ?
+            <ul style={{ color: 'white', backgroundColor: 'white' }}>
+              {firstFive.map((pokemon, i) => {
+                const { name, url } = pokemon
+                return (
+                  <li style={{ color: 'white' }}>
+                    <Link
+                      to='/pokemon-details'
+                      state={{
+                        singlePokemon: pokemon
+                      }}
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                )
+              })
+
+              }
+            </ul>
+            :
+            <ul style={{ color: 'white', backgroundColor: 'white' }}>
+              {pokemonList.map((pokemon, i) => {
+                const { name, url } = pokemon
+                return (
+                  <li style={{ color: 'white' }}>
+                    <Link
+                      to='/pokemon-details'
+                      state={{
+                        singlePokemon: pokemon
+                      }}
+                    >
+                      {name}
+                    </Link>
+                  </li>
+                )
+              })
+
+              }
+            </ul>
+          }
         </div>
 
       </article>
