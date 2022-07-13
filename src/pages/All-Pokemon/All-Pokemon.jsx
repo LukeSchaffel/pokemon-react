@@ -12,11 +12,13 @@ const AllPokemon = () => {
   const [offset, setOffset] = useState(0)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
+  const [gen, setGen] = useState(1)
 
-  const getAndDisplayPokemon = async (get, pad) => {
+  const getAndDisplayPokemon = async (get, pad, gen) => {
     setLoading(true)
     const newPokemon = await getAllPokemonWithInfo(get, pad)
     setPokemon(newPokemon)
+    setGen(gen ? gen : 1)
     setLoading(false)
   }
 
@@ -33,12 +35,12 @@ const AllPokemon = () => {
   return (
     <div className='all-pokemon-div'>
       <header>
-        <h1 >All Pokemon {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}</h1>
+        <h1 >Generation {gen} {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}</h1>
 
         <div className="btn-container">
-          <button onClick={() => getAndDisplayPokemon(151, 0)} className='gen-btn'>gen 1</button>
-          <button onClick={() => getAndDisplayPokemon(100, 151)} className='gen-btn'>gen 2</button>
-          <button onClick={() => getAndDisplayPokemon(135, 251)} className='gen-btn'>gen 3</button>
+          <button onClick={() => getAndDisplayPokemon(151, 0, 1)} className='gen-btn'>gen 1</button>
+          <button onClick={() => getAndDisplayPokemon(100, 151, 2)} className='gen-btn'>gen 2</button>
+          <button onClick={() => getAndDisplayPokemon(135, 251, 3)} className='gen-btn'>gen 3</button>
         </div>
       </header>
 
