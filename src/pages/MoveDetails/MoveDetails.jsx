@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
@@ -14,7 +15,18 @@ const MoveDetails = () => {
   const getAndSetMoveInfo = async (URL) => {
     const newMoveInfo = await getMoveInfo(URL)
     setMove(newMoveInfo);
-    setPokemonList(newMoveInfo.learned_by_pokemon)
+    const arrayOfPokemon = newMoveInfo.learned_by_pokemon
+    const promiseArray = []
+    const arrayOfCompletedPromises = []
+    for (let i = 0; i < arrayOfPokemon.length; i++) {
+      const poke = arrayOfPokemon[i];
+      promiseArray.push(axios.get(poke.url))
+      const resolvedPromises = await Promise.all(promiseArray)
+      resolvedPromises.forEach((promise)=> {
+        arrayOfCompletedPromises.push(promise.data)
+      })
+    }
+    setPokemonList(arrayOfCompletedPromises)
     setLoading(false)
   }
 
@@ -42,7 +54,12 @@ const MoveDetails = () => {
             const { name, url } = pokemon
             return (
             <li>
-              <Link to='/pokemon-details'>
+              <Link 
+              to='/pokemon-details'
+              state={{
+                singlePokemon: pokemon
+              }}
+              >
                 {name}
               </Link>
             </li>
