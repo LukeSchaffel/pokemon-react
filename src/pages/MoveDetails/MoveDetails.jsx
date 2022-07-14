@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { getMoveInfo } from "../../components/services/poke-api";
+import Pokeball from "../../components/Pokeball/Pokeball";
 
 
 const MoveDetails = () => {
@@ -38,10 +39,8 @@ const MoveDetails = () => {
     getAndSetMoveInfo(URL)
   }, [])
 
-
-
   if (loading) {
-    return <h1>Loading</h1>
+    return <Pokeball />
   } else {
 
     return (

@@ -15,7 +15,6 @@ import Pokeball from './components/Pokeball/Pokeball';
 
 function App() {
   const [loading, setLoading] = useState(false)
-  console.log(loading);
 
 
     return (
