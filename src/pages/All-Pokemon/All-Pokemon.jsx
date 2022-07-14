@@ -3,14 +3,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import { getAllPokemonWithInfo } from '../../components/services/poke-api';
 import { Spinner } from 'react-bootstrap';
+import Pokeball from '../../components/Pokeball/Pokeball';
 
 
 
-const AllPokemon = () => {
+const AllPokemon = ({loading, setLoading}) => {
   const [pokemon, setPokemon] = useState([])
   const [page, setPage] = useState(1)
   const [offset, setOffset] = useState(0)
-  const [loading, setLoading] = useState(true)
+  
   const navigate = useNavigate()
   const [gen, setGen] = useState(1)
 
@@ -27,21 +28,28 @@ const AllPokemon = () => {
     getAndDisplayPokemon(151, 0)
   }, [])
 
+  
+
   const toPokemonDetails = (singlePokemon) => {
     navigate(`/pokemon-details`, { state: { singlePokemon } })
   }
+
+  if (loading) {
+    return <Pokeball />
+  } else {
 
 
   return (
     <div className='all-pokemon-div'>
       <header>
-        <h1 >Generation {gen} {loading ? <Spinner animation="grow" variant='danger'></Spinner> : null}</h1>
-
         <div className="btn-container">
           <button onClick={() => getAndDisplayPokemon(151, 0, 1)} className='gen-btn'>gen 1</button>
           <button onClick={() => getAndDisplayPokemon(100, 151, 2)} className='gen-btn'>gen 2</button>
           <button onClick={() => getAndDisplayPokemon(135, 251, 3)} className='gen-btn'>gen 3</button>
         </div>
+
+        <h1 >Generation {gen} </h1>
+        
       </header>
 
       <div className='cards-container'>
@@ -51,6 +59,7 @@ const AllPokemon = () => {
       </div>
     </div>
   );
+}
 }
 
 export default AllPokemon;
