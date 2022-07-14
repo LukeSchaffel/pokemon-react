@@ -49,8 +49,8 @@ const AllPokemon = ({loading, setLoading}) => {
           <button onClick={() => getAndDisplayPokemon(108, 386, 4)} className='gen-btn'>gen 4</button>
           <button onClick={() => getAndDisplayPokemon(155, 494, 5)} className='gen-btn'>gen 5</button>
           <button onClick={() => getAndDisplayPokemon(72, 649, 6)} className='gen-btn'>gen 6</button>
-          <button onClick={() => getAndDisplayPokemon(72, 649, 7)} className='gen-btn'>gen 7</button>
-          <button onClick={() => getAndDisplayPokemon(88, 721, 8)} className='gen-btn'>gen 8</button>
+          <button onClick={() => getAndDisplayPokemon(88, 721, 7)} className='gen-btn'>gen 7</button>
+          <button onClick={() => getAndDisplayPokemon(89, 809, 8)} className='gen-btn'>gen 8</button>
         </div>
 
         <h1 >Generation {gen} </h1>
