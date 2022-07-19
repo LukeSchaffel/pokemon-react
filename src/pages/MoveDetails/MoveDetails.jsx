@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { getMoveInfo } from "../../components/services/poke-api";
 import Pokeball from "../../components/Pokeball/Pokeball";
+import ListPokemon from "../../components/ListPokemon/ListPokemon";
 
 
 const MoveDetails = () => {
@@ -60,19 +61,9 @@ const MoveDetails = () => {
               {firstFive.map((pokemon, i) => {
                 const { name, url } = pokemon
                 return (
-                  <li style={{ color: 'white' }}>
-                    <Link
-                      to='/pokemon-details'
-                      state={{
-                        singlePokemon: pokemon
-                      }}
-                    >
-                      {name}
-                    </Link>
-                  </li>
+                  <ListPokemon key={pokemon.id} currentPokemon={pokemon} />
                 )
               })
-
               }
             </ul>
             :
@@ -96,6 +87,7 @@ const MoveDetails = () => {
               }
             </ul>
           }
+          
         </div>
 
       </article>
