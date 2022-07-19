@@ -57,9 +57,8 @@ const MoveDetails = () => {
           </button>
 
           {smallList ?
-            <ul style={{ color: 'white', backgroundColor: 'white' }}>
+            <ul >
               {firstFive.map((pokemon, i) => {
-                const { name, url } = pokemon
                 return (
                   <ListPokemon key={pokemon.id} currentPokemon={pokemon} />
                 )
@@ -67,20 +66,10 @@ const MoveDetails = () => {
               }
             </ul>
             :
-            <ul style={{ color: 'white', backgroundColor: 'white' }}>
+            <ul>
               {pokemonList.map((pokemon, i) => {
-                const { name, url } = pokemon
                 return (
-                  <li style={{ color: 'white' }}>
-                    <Link
-                      to='/pokemon-details'
-                      state={{
-                        singlePokemon: pokemon
-                      }}
-                    >
-                      {name}
-                    </Link>
-                  </li>
+                  <ListPokemon key={pokemon.id} currentPokemon={pokemon} />
                 )
               })
 

@@ -29,7 +29,7 @@ main {
 
 }
 
-.info-div{
+.info-div {
   margin-top: 2rem;
   width: 500px;
   border: 8px solid gold;
@@ -45,7 +45,7 @@ main {
   text-transform: capitalize;
   margin: 0 .8rem;
   padding: .5rem;
-  background-color: rgba(247,247,247);
+  background-color: rgba(247, 247, 247);
 }
 
 ul {
@@ -58,20 +58,20 @@ ul {
   max-width: 80%;
 }
 
-.all-pokemon-div header{
+.all-pokemon-div header {
   text-align: center;
 }
 
 .btn-container {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 10px 0px; 
-  grid-template-areas: 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px 0px;
+  grid-template-areas:
     ". . . ."
-    ". . . ."; 
+    ". . . .";
 }
 
 .cards-container {
@@ -127,6 +127,7 @@ ul {
   transition: all 0.3s linear;
   border-radius: 2%;
 }
+
 .gen-btn:hover {
   background: red;
   color: white;
@@ -160,7 +161,8 @@ ul {
   text-transform: capitalize;
 }
 
-.move-div, .locations-list {
+.move-div,
+.locations-list {
   justify-content: center;
   margin: 0 1rem;
   padding: .5rem;
@@ -170,12 +172,14 @@ ul {
 
 
 
-.move-list li, .locations-list li {
+.move-list li,
+.locations-list li {
   text-align: left;
   text-transform: capitalize;
 }
 
-.move-list header, .locations-list header {
+.move-list header,
+.locations-list header {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -184,15 +188,16 @@ ul {
 
 .learned-by-list {
   border: 1px solid black;
+  background-color: white;
   height: 6rem;
   text-transform: capitalize;
   color: black;
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . ."; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . .";
 }
 
 .learned-by-list .grid-name {
@@ -200,7 +205,14 @@ ul {
   padding-top: 20%;
 }
 
-.learned-by-list .grid-number  {
+.learned-by-list .grid-number {
   text-align: right;
   padding-right: 3px;
+}
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    display: flex;
+    justify-content: center;
+  }
 }
