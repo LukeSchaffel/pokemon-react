@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Move from "../Move/Move";
 
 const MoveList = ({ pokemon }) => {
   const [moveList, setMoveList] = useState([...pokemon.moves])
@@ -30,7 +31,9 @@ const MoveList = ({ pokemon }) => {
                     move: move
                   }}
                   key={i}
-                ><li >{move.move.name}</li></Link>
+                >
+                  <li ><Move currentMove={move} /></li>
+                </Link>
               })}
             </ul> :
             <ul>
@@ -42,7 +45,7 @@ const MoveList = ({ pokemon }) => {
                   }}
                   key={i}
                 ><li >
-                    {move.move.name}
+                    <Move currentMove={move} />
                   </li>
                 </Link>
               })}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Navigate, Link } from "react-router-dom";
 import { getPokemonInfo } from "../../components/services/poke-api";
 import PokemonCard from "../../components/PokemonCard/PokemonCard";
 
