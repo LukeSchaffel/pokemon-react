@@ -43,7 +43,12 @@ const SearchPage = (props) => {
           <button type="submit">Search</button>
         </form>
         {currentPokemon.name ?
-          <PokemonCard pokemon={currentPokemon} />
+          <Link to={`/pokemon-details`}
+            state={{
+              singlePokemon: currentPokemon
+            }}>
+            <PokemonCard pokemon={currentPokemon} />
+          </Link>
           : <h2>Search by Name</h2>
         }
 

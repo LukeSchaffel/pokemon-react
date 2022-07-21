@@ -50,12 +50,14 @@ const MoveDetails = () => {
           <h3>{move.name}</h3>
           <h3>{move.type.name}</h3>
         </header>
-        <div>
-          Learned By:
+        <div className="learned-by-div">
+        <h3>Learned By:</h3>
           <button className="gen-btn" onClick={() => { setSmallList(!smallList) }}>
             {smallList ? `Show ${pokemonList.length - firstFive.length} More` : "Show Less"}
           </button>
 
+        </div>
+        <div>
           {smallList ?
             <ul >
               {firstFive.map((pokemon, i) => {
@@ -69,7 +71,10 @@ const MoveDetails = () => {
             <ul>
               {pokemonList.map((pokemon, i) => {
                 return (
-                  <ListPokemon key={pokemon.id} currentPokemon={pokemon} />
+                  <Link to={`/pokemon-details`}
+                  state={{
+                    pokemon: pokemon
+                  }}><ListPokemon key={pokemon.id} currentPokemon={pokemon} /></Link> 
                 )
               })
 

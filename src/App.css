@@ -45,7 +45,15 @@ main {
   text-transform: capitalize;
   margin: 0 .8rem;
   padding: .5rem;
-  background-color: rgba(247, 247, 247);
+  background-color: rgb(255, 255, 255);
+}
+
+.learned-by-div {
+  background-color: white;
+  padding: 4px;
+  display: flex;
+  margin: 1rem auto;
+  justify-content: space-between;
 }
 
 ul {

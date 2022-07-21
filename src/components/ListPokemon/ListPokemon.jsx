@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const ListPokemon = ({ currentPokemon }) => {
@@ -8,7 +9,13 @@ const ListPokemon = ({ currentPokemon }) => {
     <div className="learned-by-list">
       <img src={pokemon.sprites.front_default} alt="" />
       <div className="grid-name">
-        <h3>{pokemon.name}</h3>
+        <h3>
+          <Link to={`/pokemon-details`}
+            state={{
+              singlePokemon: pokemon
+            }}>{pokemon.name}
+          </Link>
+        </h3>
       </div>
       <div className="grid-number">
         <h3># {pokemon.id}</h3>
