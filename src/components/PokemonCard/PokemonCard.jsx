@@ -2,6 +2,8 @@ import { Card } from "react-bootstrap";
 
 const PokemonCard = ({ pokemon }) => {
 
+  console.log(pokemon);
+
   return (
 
     <article className="pokemon-card">
