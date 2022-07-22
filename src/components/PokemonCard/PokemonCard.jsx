@@ -1,7 +1,8 @@
 import { Card } from "react-bootstrap";
 
 const PokemonCard = ({ pokemon }) => {
-
+// console.log(pokemon);
+// console.log(pokemon.sprites.front_default);
   return (
 
     <article className="pokemon-card">
