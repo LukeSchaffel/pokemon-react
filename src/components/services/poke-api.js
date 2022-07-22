@@ -15,24 +15,29 @@ export const getPokemonInfo = (formData) => {
 
 
 export const getAllPokemonWithInfo = async (total, offset) => {
-  const res = await axios.get(`${baseUrl}/pokemon?limit=${total}&offset=${offset}/`)
-  const pokemonData = res.data.results
-  const promiseArray = []
+  try {
+    const res = await axios.get(`${baseUrl}/pokemon?limit=${total}&offset=${offset}/`)
+    const pokemonData = res.data.results
+    const promiseArray = []
 
-  for (let i = 0; i < pokemonData.length; i++) {
-    const element = pokemonData[i];
+    for (let i = 0; i < pokemonData.length; i++) {
+      const element = pokemonData[i];
 
-    promiseArray.push(
-      axios.get(element.url)
-    )
+      promiseArray.push(
+        axios.get(element.url)
+      )
 
+    }
+    const allPokemonData = await Promise.all(promiseArray)
+    const pokemon = []
+    allPokemonData.forEach((item) => {
+      pokemon.push(item.data)
+    })
+    return pokemon
+  } catch (error) {
+    console.log(error);
+    throw (error)
   }
-  const allPokemonData = await Promise.all(promiseArray)
-  const pokemon = []
-  allPokemonData.forEach((item) => {
-    pokemon.push(item.data)
-  })
-  return pokemon
 }
 
 export const getLocationInfo = async (url) => {
