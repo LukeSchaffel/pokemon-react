@@ -1,4 +1,4 @@
-import '/Users/lukeschaffel/code/side-projects/pokemon-react/src/Pokeball.css'
+import '../../Pokeball.css'
 
 const Pokeball = () => {
   return (
