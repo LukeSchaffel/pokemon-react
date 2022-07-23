@@ -14,6 +14,7 @@ const AllPokemon = ({ loading, setLoading }) => {
   const [first20, setFirst20] = useState([])
   const [smallList, setSmallList] = useState(true)
 
+  
   const navigate = useNavigate()
   const [gen, setGen] = useState(1)
 

@@ -8,7 +8,7 @@ const PokemonDetails = ({ loading, setLoading }) => {
   const location = useLocation()
   const [pokemon, setPokemon] = useState(location.state.singlePokemon)
 
-  console.log(pokemon);
+
   return (
     <article className="info-div">
       <header>
