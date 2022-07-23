@@ -49,7 +49,7 @@ const SearchPage = (props) => {
             }}>
             <PokemonCard pokemon={currentPokemon} />
           </Link>
-          : <h2>Search by Name</h2>
+          : <h2>Search by Name or Number</h2>
         }
 
       </section>
