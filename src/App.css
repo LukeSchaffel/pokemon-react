@@ -194,6 +194,8 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: left;
+  border: 1px solid red;
+  border-radius: 5px;
 
 }
 

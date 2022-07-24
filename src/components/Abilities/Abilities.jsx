@@ -2,7 +2,7 @@ import Ability from "../Ability/Ability";
 
 const Abilities = ({ pokemon, loading, setLoading }) => {
   const { abilities } = pokemon
-  console.log(abilities);
+
   return (
 
     <div className="abilities-div">
