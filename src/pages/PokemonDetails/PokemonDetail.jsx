@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import PhotoGalery from "../../components/PhotoGalery/PhotoGalery";
 import MoveList from "../../components/MoveList/MoveList";
 import EncounterLocations from "../../components/EncounterLocations/EncounterLocations";
+import Abilities from "../../components/Abilities/Abilities";
 
 const PokemonDetails = ({ loading, setLoading }) => {
   const location = useLocation()
@@ -22,6 +23,9 @@ const PokemonDetails = ({ loading, setLoading }) => {
         loading={loading}
         setLoading={setLoading} />
       <EncounterLocations pokemon={pokemon}
+        loading={loading}
+        setLoading={setLoading} />
+      <Abilities pokemon={pokemon}
         loading={loading}
         setLoading={setLoading} />
     </article>
