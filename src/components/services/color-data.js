@@ -13,7 +13,7 @@ const colors = {
   ice: 'rgb(140,218,242)',
   normal: 'rgb(212,210,205)',
   poison: 'rgb(163,103,166)',
-  pyscic: 'rgb(235,71,128)',
+  psychic: 'rgb(223,73,123)',
   rock: 'rgb(183,158,84)',
   steel: 'rgb(182,183,194)',
   water: 'rgb(67,158,245, .75)'
