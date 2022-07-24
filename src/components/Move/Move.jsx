@@ -7,7 +7,7 @@ const Move = ({ currentMove }) => {
   return ( 
     <div className="move">
       <div className="grid-name">
-        <h3>{move.name}</h3>
+        <h3 >{move.name}</h3>
       </div>
     </div>
   );

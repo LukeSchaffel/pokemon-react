@@ -1,23 +1,25 @@
 import Ability from "../Ability/Ability";
 
-const Abilities = ({pokemon, loading, setLoading}) => {
+const Abilities = ({ pokemon, loading, setLoading }) => {
   const { abilities } = pokemon
   console.log(abilities);
-  return ( 
-  
-  <div className="abilities-div">
-    <article className="ability-list">
-      {abilities.map((ability, idx) => {
-        return <Ability key={idx} ability={ability}/>
-      })
+  return (
 
-      }
-
-    </article>
-  
-  </div>
-
- );
+    <div className="abilities-div">
+      <article className="abilities-list">
+        <header>
+          <h1>Abilities: </h1>
+        </header>
+        <ul>
+          {abilities.map((ability, idx) => {
+            return <li key={idx}>
+              <Ability ability={ability} />
+            </li>
+          })}
+        </ul>
+      </article>
+    </div>
+  );
 }
- 
+
 export default Abilities;

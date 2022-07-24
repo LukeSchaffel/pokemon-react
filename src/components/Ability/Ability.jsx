@@ -1,7 +1,7 @@
 const Ability = ({ ability }) => {
   return ( 
- <div>
-  <div>
+ <div className="ability">
+  <div className="grid-name">
     <h3>
       {ability.ability.name}
     </h3>

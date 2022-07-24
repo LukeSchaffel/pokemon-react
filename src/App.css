@@ -182,13 +182,15 @@ ul {
 
 
 .move-list li,
-.locations-list li {
+.locations-list li,
+.abilities-list li {
   text-align: left;
   text-transform: capitalize;
 }
 
 .move-list header,
-.locations-list header {
+.locations-list header,
+.abilities-list header {
   display: flex;
   flex-direction: row;
   justify-content: left;
